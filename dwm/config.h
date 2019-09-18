@@ -44,7 +44,7 @@ static const int attachbelow = 1;    /* 1 means attach after the currently activ
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-	// { "><>",      NULL },    [> no layout function means floating behavior <]
+	{ "><>",      NULL },    // [> no layout function means floating behavior <]
 	{ "[M]",      monocle },
 };
 
