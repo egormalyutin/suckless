@@ -2303,8 +2303,9 @@ main(int argc, char *argv[])
 #endif /* __OpenBSD__ */
 	scan();
 	system("feh --bg-scale ~/dots/dwm/bg.png");
-	system("compton --config ~/dots/compton.conf &");
+	system("/usr/local/bin/picom --config ~/dots/compton.conf &");
 	system("~/dots/dwm/bar.sh &");
+	system("xwinwrap -ni -fdt -sh rectangle -un -b -nf -ov -fs -- mpv --wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --gapless-audio=yes --aid=no --vo=xv --hwdec=auto --really-quiet --pause --input-ipc-server=/tmp/mpv-bg-socket ~/dots/bg.mp4 &");
 	system("{ while true; do; if (($(acpi | sed 's/Char/100%/' | grep -Eo '[0-9]+%' | head -n1 | grep -Eo '[0-9]+') < 20)); then; zenity --warning --text='Battery low'; fi; sleep 20; done }&");
 	run();
 	cleanup();
